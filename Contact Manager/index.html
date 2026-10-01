@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Book</title>
+
+    <!-- Fonts used by the top banner. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lustria&display=swap" rel="stylesheet">
+
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+
+    <!-- Login page scripts. Password hashing is handled by the PHP API, not the frontend. -->
+    <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/api.js"></script>
+    <script type="text/javascript" src="js/session.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+</head>
+
+<body>
+    <div class="topBanner">
+        <h1><a href="index.html">Contact Book</a></h1>
+    </div>
+    <main class="mainArea">
+    <div class="centerBoxLogin">
+        <div class="loginForm">
+            <p class="formTitle">Sign In</p>
+
+            <form onsubmit="return false;">
+                <label for="loginName">Username</label>
+                <input type="text" id="loginName" name="loginName" placeholder="Username" autocomplete="username" onkeydown="loginOnEnter(event);"><br>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" autocomplete="current-password" onkeydown="loginOnEnter(event);"><br><br>
+
+                <button type="button" id="loginButton" onclick="doLogin();">Login</button>
+            </form>
+
+            <span id="loginResult" aria-live="polite"></span>
+
+            <p class="UseOurSite">Don't have an account? <a href="register.html">Register here!</a></p>
+        </div>
+
+        <div class="welcomeMessage">
+            <h2>Welcome to Contact Book!</h2>
+            <p>
+                Contact Book helps you store, manage, and quickly find the people who matter to you most.
+                Sign in to connect with your contacts or create an account and start building your contact list today.
+            </p>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

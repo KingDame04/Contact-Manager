@@ -1,0 +1,779 @@
+/* READ: This file contains all the style code for the whole site. With that being the case, it is VERY messy.*/
+/* I've tried to find at each point where I can see that the code is only for a specific page (e.g., register.html or contact.html) and added comments to indicate that. */
+/* Each sections comment will have a start comment starting with "START" and an end comment ending with "END". */
+/* If you are trying to find a specific style code for a specific page, I recommend using Ctrl+F (Windows) or Cmd+F (Mac) to find the style for the section you're looking for. */
+
+/* General styles for the body of the whole site. This includes the login page, registration page, and contact dashboard. */
+body {
+    font-family: "Lustria", serif;
+    background-image: linear-gradient(to bottom, #3E77A9, #192F43 );
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.registerPage {
+    min-height: 100vh;
+}
+
+.dashboardPage {
+    min-height: 100vh;
+}
+
+.contactLayout {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 60px);
+}
+
+/* START: Style for the top banner. This should stay consistent throughout the whole site*/
+/*------------------------------------------------------------------------------------------*/
+.topBanner{
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    height: 60px;
+
+    display: flex;
+    align-items: center;       /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.topBanner h1 {
+    font-family: "Alex Brush", cursive;
+    font-size: 46px;
+    opacity: 0.85;
+    margin: 0;
+    transform: translateY(3px);
+}
+
+.topBanner h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+/*------------------------------------------------------------------------------------------*/
+/* END: Style for the top banner. */
+
+
+/* START: Style for the registration page (register.html) */
+/*------------------------------------------------------------------------------------------*/
+#registerDiv {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: min(520px, calc(100% - 32px));
+    margin: 42px auto;
+    padding: 34px 42px;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
+}
+
+#inner-title {
+    display: block;
+    margin-bottom: 8px;
+    color: #192F43;
+    font-size: 34px;
+    text-align: center;
+}
+
+.formHelp {
+    margin: 0 0 24px 0;
+    color: #4f5d67;
+    font-size: 15px;
+    text-align: center;
+}
+
+#registerDiv label {
+    display: block;
+    margin: 14px 0 6px 0;
+    color: #243847;
+    font-size: 15px;
+}
+
+#registerDiv input[type="text"],
+#registerDiv input[type="password"] {
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    border: 1px solid #c8d1d8;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: "Lustria", serif;
+    font-size: 16px;
+}
+
+#registerDiv input[type="text"]:focus,
+#registerDiv input[type="password"]:focus {
+    outline: 3px solid rgba(62, 119, 169, 0.25);
+    border-color: #3E77A9;
+}
+
+#registerButton {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 22px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #2d5c85;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+    font-size: 17px;
+}
+
+#registerButton:hover,
+#registerButton:focus {
+    background-color: #20425f;
+}
+
+#registerButton:disabled {
+    background-color: #8aa8c2;
+    cursor: wait;
+}
+
+#loginButton:disabled {
+    cursor: wait;
+}
+
+#loginResult {
+    display: block;
+    min-height: 22px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#registerResult {
+    display: block;
+    min-height: 24px;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.errorMessage {
+    color: #8a1f11;
+}
+
+.successMessage {
+    color: #1c6b39;
+}
+
+#backToLoginLink {
+    display: block;
+    margin-top: 12px;
+    color: #2d5c85;
+    text-align: center;
+    text-decoration: none;
+}
+
+#backToLoginLink:hover,
+#backToLoginLink:focus {
+    text-decoration: underline;
+}
+/*------------------------------------------------------------------------------------------*/
+/* END: Style for the registration page (register.html) */
+
+
+/* START: Style for the main content area (contact.html). */
+/* READ: This code is very messy, I am NOT 100% sure that this is only code for contact.html*/
+/*------------------------------------------------------------------------------------------*/
+.mainArea {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.leftTools {   
+    display: flex;
+    gap: 8px;
+    margin-right: auto;
+}
+
+.rightTools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+/* Style for left sidebar with Contact list of names in center and add contact button at the bottom */
+.dashboardShell {
+    width: 225px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.dashboardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid #d8e0e6;
+    padding-bottom: 18px;
+}
+
+.dashboardHeader h1 {
+    margin: 0 0 6px 0;
+    color: #192F43;
+    font-size: 34px;
+}
+
+
+
+#userName {
+    color: #4f5d67;
+    font-size: 16px;
+}
+
+#logoutButton,
+/*#searchContactButton,*/
+/*#addContactButton,*/
+/*#deleteContactButton,*/
+#editContactButton
+ {
+    min-height: 40px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #2d5c85;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+    font-size: 15px;
+}
+
+#addContactButton {
+    background-color: #2d5c85;
+    min-height: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+    font-size: 13px;
+    border: 0;
+    border-radius: 6px;
+}
+
+#addContactButton:hover {
+    background-color: #20425f;
+}
+
+#logoutButton {
+    width: 100px;
+}
+
+.dashboardTools {
+    margin-top: 24px;
+}
+
+.dashboardTools label {
+    display: block;
+    margin-bottom: 8px;
+    color: #243847;
+}
+
+.searchRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchLabel {
+    position: absolute;
+    left: -10000px;
+}
+
+.topBanner input[id="contactSearchText"] {
+    width: 150px;
+    height: 24px;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 1px solid #c8d1d8;
+    
+    /*flex: 1;
+    min-height: 24px;
+    box-sizing: border-box;
+    font-family: "Lustria", serif;
+    font-size: 16px;*/
+}
+
+/* Style for the search button next to the search box on contact page (contact.html) */
+/* Its just the magnifying glass icon, so I removed the background and border.*/
+#searchContactButton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #3E77A9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*width: 60px;
+    height: 20px;
+    background-color: #3E77A9;
+    color: #ffffff;*/
+}
+
+/* Style for the search button when hovered over it on contact page (contact.html) */
+#searchContactButton:hover {
+    color: #476B8A;
+    
+}
+
+#searchContactButton:disabled {
+    color: #8aa8c2;
+    cursor: wait;
+}
+
+#clearSearchButton {
+    min-height: 28px;
+    border: 0;
+    border-radius: 6px;
+    background-color: #2d5c85;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+    font-size: 13px;
+}
+
+#clearSearchButton:hover {
+    background-color: #20425f;
+}
+
+#clearSearchButton:disabled {
+    background-color: #8aa8c2;
+    cursor: wait;
+}
+
+#contactSearchResult {
+    display: block;
+    min-height: 24px;
+    margin-top: 12px;
+    color: #4f5d67;
+}
+
+.contactActions {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.contactActions button {
+    flex: 1;
+}
+
+/*#deleteContactButton {
+    background-color: #8a1f11;
+}*/ 
+
+.contactListHeader {
+    font-size: 14px;
+    color: #192F43;
+    /*margin-bottom: 12px;*/
+    align-self: center;
+}
+#contactListArea {
+    min-height: 260px;
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid #d8e0e6;
+    border-radius: 8px;
+    background-color: #f7f9fb;
+}
+
+#emptyContactsMessage {
+    margin: 78px 0;
+    color: #4f5d67;
+    text-align: center;
+    font-size: 18px;
+}
+
+#contactList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    margin: 12px;
+}
+
+#addContactButton-container {
+    margin-top:auto;
+    padding-top: 12px;
+    background:none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+/* This style code handles the divider between contact groups (CURRENTLY ORDERED BY LAST NAME) */
+/* e.g., "A" for all contacts starting with "A" */
+.contactDivider {
+    /*position: sticky;*/
+    /*top: 0;*/
+    background: none;
+    z-index: 1;
+
+    font-weight: bold;
+    font-size: 13px;
+    color: #3E77A9;
+
+    padding: 6px 10px;
+    margin-top: 10px;
+
+    border-bottom: 1px solid #d8e0e6;
+}
+
+#addContactButton {
+    margin-top: auto;
+    align-self: center;
+    width: 80%;
+}
+
+.mainSpace {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactCard {
+    position: relative;
+    background: rgba(255, 255, 255, 0.75);
+    width: clamp(300px, 50vw, 500px);
+    height: auto;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#addContactForm,
+#editContactForm {
+    display: none;
+    width: 80%;
+}
+
+#addContactForm h2,
+#editContactForm h2,
+#contactCardDetails h2 {
+    color: #192F43;
+    text-align: center;
+}
+
+#addContactForm label,
+#editContactForm label {
+    display: block;
+    margin-top: 10px;
+    color: #192F43;
+}
+
+#addContactForm input[type="text"],
+#addContactForm input[type="tel"],
+#addContactForm input[type="email"],
+#editContactForm input[type="text"],
+#editContactForm input[type="tel"],
+#editContactForm input[type="email"] {
+    width: 100%;
+    min-height: 34px;
+    padding: 8px;
+    border: 1px solid #c8d1d8;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-family: "Lustria", serif;
+}
+
+.formButtonRow {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+#createContactButton,
+#cancelContactButton,
+#updateContactButton,
+#cancelEditContactButton,
+#openEditContactButton,
+#openDeleteContactButton,
+#confirmDeleteContactButton,
+#cancelDeleteContactButton {
+    flex: 1;
+    min-height: 36px;
+    border: 0;
+    border-radius: 6px;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+}
+
+#createContactButton {
+    background-color: #2d5c85;
+}
+
+#updateContactButton {
+    background-color: #2d5c85;
+}
+
+#cancelContactButton,
+#cancelEditContactButton,
+#cancelDeleteContactButton {
+    background-color: #20425f;
+}
+
+#openEditContactButton {
+    width: 100%;
+    margin-top: 12px;
+    background-color: #2d5c85;
+}
+
+#openDeleteContactButton {
+    width: 100%;
+    margin-top: 12px;
+    background-color: #8a1f11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+#confirmDeleteContactButton {
+    background-color: #8a1f11;
+}
+
+#openDeleteContactButton .material-symbols-outlined {
+    font-size: 20px;
+}
+
+#deleteContactForm {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(25, 47, 67, 0.55);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.deleteDialogBox {
+    width: min(420px, 100%);
+    padding: 26px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+}
+
+.deleteDialogBox h2 {
+    margin-top: 0;
+    color: #192F43;
+    text-align: center;
+}
+
+#deleteContactText {
+    color: #192F43;
+    text-align: center;
+}
+
+#addContactResult,
+#editContactResult,
+#deleteContactResult {
+    display: block;
+    min-height: 22px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.contactListButton {
+    width: 100%;
+    min-height: 34px;
+    margin-top: 4px;
+    border: 0;
+    border-radius: 6px;
+    background-color: transparent;
+    color: #192F43;
+    cursor: pointer;
+    font-family: "Lustria", serif;
+}
+
+.contactListButton:hover {
+    background-color: #d9e4ed;
+}
+
+.sidebarEmptyMessage {
+    color: #4f5d67;
+    font-size: 13px;
+    text-align: center;
+}
+
+#contactCardDetails {
+    display: none;
+    color: #192F43;
+    font-size: 18px;
+}
+
+/* READ: This code is very messy, I am NOT 100% sure that this is only code for contact.html. */
+/*------------------------------------------------------------------------------------------*/
+/* END: Style for the main content area (contact.html). */
+
+
+/* START of Responsive design for mobile devices */
+/*--------------------------------------------------------------------------------------------------------------*/
+
+@media (max-width: 640px) {
+    .topBanner {
+        height: auto;
+        padding: 14px 0;
+        font-size: 30px;
+    }
+
+    #registerDiv {
+        margin: 24px auto;
+        padding: 26px 22px;
+    }
+
+    #inner-title {
+        font-size: 28px;
+    }
+
+    .dashboardShell {
+        margin: 24px auto;
+        padding: 20px;
+    }
+
+    .dashboardHeader,
+    .searchRow,
+    .contactActions {
+        display: block;
+    }
+
+    #logoutButton,
+    /*#searchContactButton,*/
+    #addContactButton,
+    #editContactButton,
+    #deleteContactButton {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+/* END of Responsive Design for mobile devices */
+
+
+
+/* START of Style for the login page (index.html) */ 
+/*--------------------------------------------------------------------------------------------------------------*/
+
+/* Style for the center white box on login page (index.html)*/
+.centerBoxLogin {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 75%;
+    height: 75%;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Ensure the left and right sections of the center box take equal space on login page (index.html) */
+.centerBoxLogin div {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Login form style (Left side of Center Box) on login page (index.html)*/
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.loginForm label {
+    display: block;
+    margin-top: 14px;
+    text-align: left;
+    width: 200px;
+}
+
+/* Style for "Sign in" title on login page (index.html)*/
+.formTitle { 
+    font-size: 32px;
+    opacity: 0.90;
+}
+
+/* Style for the input fields (Username and Password Boxes) on login page (index.html)*/
+.loginForm input[type="text"], .loginForm input[type="password"] {
+    font-family: "Lustria", serif;
+    width: 200px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for "Don't have an account? Sign up here!" text on login page (index.html)*/
+.UseOurSite {
+    font-size: 14px;
+}
+
+/* Style for the "Login" Button on login page (index.html) */
+input[type="button"], #loginButton{
+    font-family: "Lustria", serif;
+    background-color: #2d5c85;
+    color: white;
+    font-size: 20px;
+    letter-spacing: 4px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-left: 50px;
+}
+
+/* Style for the "Login" Button when hovered over it on Login Page (index.html)*/
+input[type="button"], #loginButton:hover {
+    background-color: #20425f;
+}
+
+/* Welcome message style (Right side of Center Box) for login page (index.html) */
+.welcomeMessage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcomeMessage h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transform: translateX(-8px);
+}
+.welcomeMessage p {
+    font-size: 14px;
+    opacity: 0.90;
+    margin-bottom: 20px;
+    line-height: 2.0;
+    transform: translateX(-3px);
+    max-width: 325px;
+}
+/*--------------------------------------------------------------------------------------------------------------*/
+/* END of Style for the login page (index.html) */
